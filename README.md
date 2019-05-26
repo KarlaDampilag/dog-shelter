@@ -1,3 +1,22 @@
+# Project Title
+
+Dog Shelter
+
+# Motivation
+
+Apply what I learned about React.js to a project that's more complex than a to-do list app. I also wanted a unique project concept instead of the usual Recipe App and the like.
+
+# Tech/Frameworks Used
+
+- HTML
+- CSS
+- JavaScript
+- React.JS
+
+# Features
+
+The main feature is a search function which allows users to filter the results based on breed, age, size, and gender. The data is retrieved from a JSON object and the contents are taken from a real dog shelter website.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
