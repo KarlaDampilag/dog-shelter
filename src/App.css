@@ -1,33 +1,153 @@
-.App {
-  text-align: center;
+label {
+  display: block;
+  font-weight: 600;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+a:hover{
+  text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.container.main {
+  padding-bottom: 40px;
 }
 
-.App-link {
-  color: #61dafb;
+/*Navbar*/
+.navbar {
+  margin-bottom: 20px;
+  padding: 15px 0;
+  background: #f1f1f1;
+}
+.navbar-nav a {
+  padding: 0;
+  margin-right: 0.8rem;
+  margin-left: 0.8rem;
+  color: #0896ff;
+  font-size: 14pt;
+  font-weight: bold;
+  border-bottom: 4px solid rgba(0,0,0,0);
+}
+.navbar-nav a:hover {
+  color: #0896ff;
+  border-bottom: 4px solid #0896ff;
+}
+.navbar-nav a:active {
+  border-bottom: 4px solid #0896ff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/*Body*/
+.full-width {
+  width: 100%;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+}
+
+.card {
+  margin-bottom: 30px;
+  box-shadow: 1px 1px 5px 0 rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+  -webkit-transition: transform 0.4s ease;
+}
+.card:hover {
+  transform: scale(1.1);
+}
+
+.featured-img-holder {
+  overflow: hidden;
+  height: 250px;
+  width: 100%;
+}
+.featured-img-holder img {
+  min-height: 250px;
+  width: 100%;
+}
+
+.img-holder {
+  display: inline-block;
+  height: 350px;
+  width: 250px;
+  overflow: hidden;
+  border-radius: 3%;
+  margin-bottom: 30px;
+}
+.img-holder img {
+  min-width: 350px;
+  height: auto;
+}
+.single-dog-container .card {
+  margin: 0;
+  padding: 1rem;
+  box-shadow: none;
+  transition: none;
+  height: 250px;
+  border-radius: 10px;
+}
+.single-dog-container .card:hover {
+  transform: scale(1);
+}
+.single-dog-container ul {
+  padding-left: 1.3rem;
+}
+.single-dog-container .red {
+  color: #ca4747;
+}
+.single-dog-container .green {
+  color: #278427;
+}
+.single-dog-container p {
+  text-align: justify;
+}
+.dog-facts div,
+.dog-facts label {
+  font-size: 10.8pt;
+}
+
+/*Filter*/
+.filter-holder {
+  position: fixed;
+  top: 180px;
+  max-width: 210px;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+.filter-holder hr {
+  margin: 20px 0 10px 0;
+}
+
+.warning {
+  margin: 0 15px;
+  font-size: 20pt;
+  color: red;
+}
+
+@media (max-width: 1200px) {
+  .featured-pets-holder {
+    display: block;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media (max-width: 989px) {
+  .filter-holder {
+    position: relative;
+    top: 0;
+    max-width: 100%;
+    margin-right: 0;
+  }
+  .img-holder {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .featured-img-holder {
+    height: 350px;
+  }
+  .album-div .col-4 {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .img-holder {
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .img-holder img {
+    border-radius: 3%;
   }
 }
