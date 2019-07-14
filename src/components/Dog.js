@@ -11,7 +11,6 @@ export default class Dog extends Component {
   }
 
   render() {
-    var name = img = sex = age = breed = color = size = info = story = "";
     if (this.props.location.state != null) {
       var {name, img, sex, age, breed, color, size, info, story} = this.props.location.state.dog;
     } else {
@@ -19,18 +18,18 @@ export default class Dog extends Component {
       const query = new URLSearchParams(this.props.location.search);
       const pageID = query.get('id');
       let chosenOne = dogs.filter(dog =>
-        dog.id == pageID
+        dog.id === pageID
       );
       chosenOne = chosenOne[0];
-      name = chosenOne.name;
-      img = chosenOne.img;
-      sex = chosenOne.sex;
-      age = chosenOne.age;
-      breed = chosenOne.breed;
-      color = chosenOne.color;
-      size = chosenOne.size;
-      info = chosenOne.info;
-      story = chosenOne.story;
+      var name = chosenOne.name;
+      var img = chosenOne.img;
+      var sex = chosenOne.sex;
+      var age = chosenOne.age;
+      var breed = chosenOne.breed;
+      var color = chosenOne.color;
+      var size = chosenOne.size;
+      var info = chosenOne.info;
+      var story = chosenOne.story;
     }
 
     return(

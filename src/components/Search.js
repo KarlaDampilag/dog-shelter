@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { Form, Button, Row, Col } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
+import { breeds, ages, genders, sizes } from '../constants.js';
 
 class Search extends Component {
   handleSearch = (e) => {
     e.preventDefault();
+
+    // TODO change this into declarative
     let breed = document.querySelector('#search-breed').value;
     let gender = document.querySelector('#search-gender').value;
     let age = document.querySelector('#search-age').value;
@@ -26,34 +29,23 @@ class Search extends Component {
             <Form.Group>
               <Form.Label>Breed</Form.Label>
               <Form.Control as="select" id="search-breed">
-              <option>Any</option>
-              <option>Anatolian Shepherd</option>
-              <option>Basenji</option>
-              <option>Beagle</option>
-              <option>Chihuahua</option>
-              <option>Cocker Spaniel</option>
-              <option>Golden Retriever</option>
-              <option>Great Dane</option>
-              <option>Husky</option>
-              <option>Labrador Retriever</option>
-              <option>Maltese</option>
-              <option>Pomeranian</option>
-              <option>Poodle</option>
-              <option>Shepherd</option>
-              <option>Schnauzer</option>
-              <option>Shih Tzu</option>
-              <option>Spaniel</option>
-              <option>Terrier</option>
+              {
+                breeds.map(breed => {
+                  return <option>{breed}</option>
+                })
+              }
               </Form.Control>
             </Form.Group>
           </Col>
           <Col>
           <Form.Group>
-            <Form.Label>Sex</Form.Label>
+            <Form.Label>Gender</Form.Label>
             <Form.Control as="select" id="search-gender">
-              <option>Any</option>
-              <option>Male</option>
-              <option>Female</option>
+            {
+              genders.map(gender => {
+                return <option>{gender}</option>
+              })
+            }
             </Form.Control>
           </Form.Group>
           </Col>
@@ -63,11 +55,11 @@ class Search extends Component {
             <Form.Group>
               <Form.Label>Age</Form.Label>
               <Form.Control as="select" id="search-age">
-                <option>Any</option>
-                <option>Puppy</option>
-                <option>Young</option>
-                <option>Adult</option>
-                <option>Senior</option>
+              {
+                ages.map(age => {
+                  return <option>{age}</option>
+                })
+              }
               </Form.Control>
             </Form.Group>
           </Col>
@@ -75,11 +67,11 @@ class Search extends Component {
             <Form.Group>
               <Form.Label>Size (when grown)</Form.Label>
               <Form.Control as="select" id="search-size">
-              <option>Any</option>
-              <option value="Small">Small (11 kg or less)</option>
-              <option value="Medium">Medium (12-27 kg)</option>
-              <option value="Large">Large (28-45 kg)</option>
-              <option value="Extra large">Extra large (46kg or more)</option>
+              {
+                Object.entries(sizes).map(size => {
+                  return <option value={`${size[0]}`}>{size[1]}</option>
+                })
+              }
               </Form.Control>
             </Form.Group>
           </Col>
